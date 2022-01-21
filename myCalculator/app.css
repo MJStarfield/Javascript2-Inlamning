@@ -1,0 +1,121 @@
+body {
+  background-color: black;
+  overflow: hidden;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#mainContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+#contentContainer {
+  min-width: 270px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  padding: 4em;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 192, 203, 0.5),
+    rgba(0, 0, 128, 0.5)
+  );
+  color: white;
+  border: 1px solid cyan;
+  border-radius: 1em;
+  transition: all 200ms ease-in-out;
+  animation: fadeIn 2s ease-in forwards,
+    flashingBoxShadow 4s ease-in-out alternate infinite;
+}
+
+#contentContainer input {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  color: rgb(0, 0, 128);
+  transition: all 300ms;
+  height: 1.5em;
+}
+#contentContainer button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  transition: all 300ms;
+  height: 1.8em;
+  width: 2em;
+}
+#contentContainer button:hover {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: rgb(0, 0, 128);
+  cursor: pointer;
+}
+#contentContainer div {
+  margin-top: 0.7em;
+  text-align: left;
+}
+
+#resultContainer,
+#calcContainer {
+  display: flex;
+  gap: 0.5em;
+}
+
+#resultText,
+#calculationText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.fadeOut {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flashingBoxShadow {
+  from {
+    box-shadow: 0px 0px 50px blue;
+  }
+  to {
+    box-shadow: 0px 0px 10px blue;
+  }
+}

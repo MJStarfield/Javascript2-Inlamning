@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="mainContainer">
+      <canvas id="canvas"> </canvas>
+      <div id="contentContainer">
+        <form onsubmit="return false">
+          <input type="text" name="" id="inputField" />
+          <button id="addBtn">+</button>
+          <button id="subBtn">-</button>
+          <button id="equalBtn" type="submit">=</button>
+        </form>
+        <div id="textContainer">
+          <div id="calcContainer">
+            <div>Calculation:</div>
+            <div id="calculationText"></div>
+          </div>
+          <div id="resultContainer">
+            <div>Result:</div>
+            <div id="resultText"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

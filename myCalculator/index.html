@@ -12,10 +12,12 @@
       <canvas id="canvas"> </canvas>
       <div id="contentContainer">
         <form onsubmit="return false">
-          <input type="text" name="" id="inputField" />
+          <div id="test">
+            <input type="text" name="" id="inputField" pattern="[0-9]+" />
+          </div>
           <button id="addBtn">+</button>
-          <button id="subBtn">-</button>
-          <button id="equalBtn" type="submit">=</button>
+          <button id="subBtn" class="saberBtn">-</button>
+          <button id="equalBtn" class="saberBottom" type="submit">=</button>
         </form>
         <div id="textContainer">
           <div id="calcContainer">

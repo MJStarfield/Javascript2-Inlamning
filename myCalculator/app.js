@@ -19,12 +19,19 @@ $("body").keydown(function (event) {
           return val + event.key;
         });
         $("#resultText").addClass("fadeOut");
-        $("#resultText").removeClass("fadeIn");
+        $("#resultText").removeClass("textFadeInFlash");
         $("#calculationText").removeClass("fadeIn");
         console.log(currentNum);
       }
     }
   }
+});
+
+$("#contentContainer").mouseover(function () {
+  $("button").css("margin-right", "0.3em");
+});
+$("#contentContainer").mouseout(function () {
+  $("button").css("margin-right", "0.0em");
 });
 
 $("#addBtn").click(function () {
@@ -62,7 +69,7 @@ $("#equalBtn").click(function () {
       console.log(element);
       result += parseInt(element);
     });
-    $("#resultText").addClass("fadeIn");
+    $("#resultText").addClass("textFadeInFlash");
     $("#resultText").append(result);
   }
 
@@ -141,7 +148,7 @@ const tick = (time) => {
   let elapsed = time - prevTime;
   prevTime = time;
 
-  moveStars(elapsed * 0.2);
+  moveStars(elapsed * 0.1);
 
   clear();
 

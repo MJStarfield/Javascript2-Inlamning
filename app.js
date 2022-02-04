@@ -3,19 +3,7 @@ let result = 0;
 let currentNum = "";
 
 $("body").keydown(function (event) {
-  if ($("#inputField").is(":focus")) {
-    var key = event.charCode || event.keyCode || 0;
-    return (
-      key == 8 ||
-      key == 9 ||
-      key == 46 ||
-      key == 110 ||
-      key == 190 ||
-      (key >= 35 && key <= 40) ||
-      (key >= 48 && key <= 57) ||
-      (key >= 96 && key <= 105)
-    );
-  } else {
+  if (!$("#inputField").is(":focus")) {
     if (event.key == "+") {
       $("#addBtn").click();
     } else if (event.key == "-") {
@@ -25,8 +13,7 @@ $("body").keydown(function (event) {
     } else {
       if (
         (event.keyCode >= 48 && event.keyCode <= 57) ||
-        (event.keyCode >= 96 && event.keyCode <= 105) ||
-        event.keyCode == 190
+        (event.keyCode >= 96 && event.keyCode <= 105)
       ) {
         $("#inputField").val(function (i, val) {
           return val + event.key;
@@ -76,10 +63,11 @@ $("#subBtn").click(function () {
 });
 
 $("#equalBtn").click(function () {
+  $("#resultText").removeClass("fadeOut");
   if (calculationArray.length != 0) {
     calculationArray.forEach((element) => {
       console.log(element);
-      result += parseFloat(element);
+      result += parseInt(element);
     });
     $("#resultText").addClass("textFadeInFlash");
     $("#resultText").append(result);
@@ -88,7 +76,6 @@ $("#equalBtn").click(function () {
   calculationArray = [];
   $("#calculationText").removeClass("fadeIn");
   $("#calculationText").addClass("fadeOut");
-  $("#resultText").removeClass("fadeOut");
   $("#calculationText").text("");
   result = 0;
   currentNum = "";
